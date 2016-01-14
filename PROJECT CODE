@@ -1,0 +1,1038 @@
+	Admin:
+This module contains:-
+Inputs: -It is the basic entity of our website which has the only authority to make changes in the website.
+Outputs: -It allows news given by reporter and other users.
+Functionality:-Its functionality is to allow news from different reporters to add into the website and henceforth, acts a s a main module to support the website.
+     
+AdminMasterPage.aspx
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="AdminMasterPage.master.cs" Inherits="AdminMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>The Web News</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="ie.css" /><![endif]-->
+    <style type="text/css">
+        .auto-style1 {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<!-- BEGIN wrapper -->
+<div id="wrapper">
+  <!-- BEGIN header -->
+  <div id="header">
+    <ul>
+      <li class="f"><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="page.html">Demo Page</a></li>
+      <li><a href="contact.html">Contact Page</a></li>
+    </ul>
+    <p class="links">Subscribe: <a href="http://all-free-download.com/free-website-templates/">Posts</a> | <a href="http://all-free-download.com/free-website-templates/">Comments</a> | <a href="http://all-free-download.com/free-website-templates/">Email</a> </p>
+    <div class="break"></div>
+      <div class="logo">
+          <h1><a href="http://all-free-download.com/free-website-templates/">&nbsp;</a><span class="auto-style1"><a href="http://all-free-download.com/free-website-templates/">exclusive News</a></span> <span class="auto-style1">channel</span></h1>
+      <p>No 1 News Site</p>
+    </div>
+    <div class="ad468x60"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad468x60.gif" alt="" /></a> </div>
+    <div class="break"></div>
+    <ol>
+      <li><a href="PostAdd.aspx">Advertising</a></li>
+      <li><a href="UpdateAdd.aspx">Update Add</a></li>
+      <li><a href="AllowNews.aspx">Allow News</a></li>
+      <li><a href="UserRegistration.aspx">Create User</a></li>
+      <li><a href="UOP.aspx">UOP</a></li>
+      <li><a href="OPR.aspx">OPR</a></li>
+        <li><a href="UpdateRotator.aspx">Update Rotator</a></li>
+      <li><a href="Logout.aspx">LogOut</a></li>
+                                                                          
+    </ol>
+    <div class="break"></div>
+  </div>
+  <!-- END header -->
+  <!-- BEGIN content -->
+     
+      <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+     
+    <!-- END content -->
+  <!-- BEGIN sidebar -->
+
+  <div id="sidebar">
+    <!-- begin ads -->
+    <div class="ads"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> </div>
+    <!-- end ads -->
+    <!-- begin search -->
+    <form class="search" action="http://all-free-download.com/free-website-templates/">
+      <input type="text" name="s" id="s" />
+      <button type="submit">Search</button>
+    </form>
+    <!-- end search -->
+    <div class="wrapper">
+      <!-- begin popular posts -->
+      <h2>Popular Posts</h2>
+      <ul>
+        <li><a href="http://all-free-download.com/free-website-templates/">Make Money Online Creating Websites</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Top 100 Internet Marketing Tips</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Tutorial: How to add Videos in your Post</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Sample Post Unordered List</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Sample Post Blockquote</a></li>
+      </ul>
+      <!-- end popular posts -->
+      <!-- begin flickr photos -->
+      <h2>Flickr Photos</h2>
+      <div class="flickr"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb3.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb4.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb5.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb6.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb7.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb8.jpg" alt="" /></a> </div>
+      <!-- end flickr photos -->
+      <!-- begin featured video -->
+      <h2>Featured Video</h2>
+      <div class="video"> <img src="images/_video.jpg" alt="" /> </div>
+      <!-- end featured video -->
+      <!-- begin tags -->
+      <h2>Tags</h2>
+      <div class="tags"> </div>
+      <!-- end tags -->
+      <!-- BEGIN left -->
+      <div class="l sbar">
+        <!-- begin categories -->
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Entertainment</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Fashion</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Internet</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Marketing</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Lifestyle</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Make Money</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Online</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Parenting</a></li>
+        </ul>
+        <!-- end categories -->
+        <!-- begin pages -->
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">About</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Archives</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Links</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Contact</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Sitemap</a></li>
+        </ul>
+        <!-- end pages -->
+      </div>
+      <!-- END left -->
+      <!-- BEGIN right -->
+      <div class="r sbar">
+        <!-- begin archives -->
+        <h2>Archives</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">August 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">July 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">June 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">May 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">April 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">March 2008</a></li>
+        </ul>
+        <!-- end archives -->
+        <!-- begin blogroll -->
+        <h2>Blogroll</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Carlos</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Digital Point Forum</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Eric's Photo Gallery</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Fashion Trends</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Google Scoreboard</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Marketing Forum</a></li>
+        </ul>
+        <!-- end blogroll -->
+        <!-- begin meta -->
+        <h2>Meta</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Login</a></li>
+        </ul>
+        <!-- end meta -->
+      </div>
+      <!-- END right -->
+    </div>
+  </div>
+  <!-- END sidebar -->
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>Copyright &copy; 2009 - <a href="http://all-free-download.com/free-website-templates/">Website Name</a> &middot; All Rights Reserved</p>
+    <p>Template by: <a href="http://www.wpthemedesigner.com/">WordPress Designer</a> | Get More <a href="http://all-free-download.com/free-website-templates/">Free CSS Templates</a></p>
+  </div>
+  <!-- END footer -->
+</div>
+<!-- END wrapper -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</html>
+
+
+AdminMasterPage.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class AdminMasterPage : System.Web.UI.MasterPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+}
+
+				
+ User/customer
+This module contains:-
+Inputs:-It contains inputs as User ID, name, password, e-mail ID and gender. 
+Output:-This module uploads the personal details entered by the user to the database (UserDetails).
+Functionality:-The functionality of this module is to upload the details of each user who register the website.
+ 
+Source code
+UserRegistration.aspx
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.master" AutoEventWireup="true" CodeFile="UserRegistration.aspx.cs" Inherits="UserRegistration" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="content">
+    <!-- begin post -->
+    <div class="single">
+      <h2>
+          <asp:Label ID="Label1" runat="server" Text="User Registration" ForeColor="#FF3300"></asp:Label></h2>
+    </div>
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <asp:CalendarExtender ID="CalendarExtender1" TargetControlID="TextBox11" Format="dd/MM/yyyy" runat="server"></asp:CalendarExtender>
+     <asp:CalendarExtender ID="CalendarExtender2" TargetControlID="TextBox12" Format="dd/MM/yyyy" runat="server"></asp:CalendarExtender>
+          <center>
+       <table width="50%">
+           <tr><td>Enter The Username :</td><td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Enter The Password  :</td><td><asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+            <tr><td>Enter The Name :</td><td><asp:TextBox ID="TextBox3" runat="server"></asp:TextBox></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Select User Type  :</td><td>
+               <asp:DropDownList ID="DropDownList1" runat="server" Width="160px" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+                   <asp:ListItem>---Select UserType---</asp:ListItem>
+                   <asp:ListItem>Admin</asp:ListItem>
+                   <asp:ListItem>Reporter</asp:ListItem>
+               </asp:DropDownList></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+             <tr><td>Select Reporter Type :</td><td><asp:DropDownList ID="DropDownList2" runat="server" Width="160px" Enabled="False">
+                 <asp:ListItem>---Select Reporter Type---</asp:ListItem>
+                 <asp:ListItem>Polytics</asp:ListItem>
+                 <asp:ListItem>Crime</asp:ListItem>
+                 <asp:ListItem>Entertainment</asp:ListItem>
+                 <asp:ListItem>Sports</asp:ListItem>
+                 <asp:ListItem>International</asp:ListItem>
+                 </asp:DropDownList></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Enter Mobile No  :</td><td><asp:TextBox ID="TextBox6" runat="server" TextMode="Password"></asp:TextBox></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+             <tr><td>Enter Email ID :</td><td><asp:TextBox ID="TextBox7" runat="server"></asp:TextBox></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Enter Address  :</td><td><asp:TextBox ID="TextBox8" runat="server" TextMode="Password"></asp:TextBox></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+             <tr><td>Enter Security Question :</td><td><asp:TextBox ID="TextBox9" runat="server"></asp:TextBox></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Enter Answer  :</td><td><asp:TextBox ID="TextBox10" runat="server" TextMode="Password"></asp:TextBox></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+             <tr><td>Enter The DOJ :</td><td><asp:TextBox ID="TextBox11" runat="server"></asp:TextBox></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Enter The DOB  :</td><td><asp:TextBox ID="TextBox12" runat="server" TextMode="Password"></asp:TextBox></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+            
+          <tr><td>Select Gender  :</td><td align="left">
+              <asp:RadioButton ID="RadioButton1" runat="server" GroupName="Gender" Text="Male" />&nbsp;&nbsp;<asp:RadioButton ID="RadioButton2" runat="server" GroupName="Gender" Text="Female" /></td></tr>
+              
+             <tr><td></td><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:ImageButton ID="ImageButton1" runat="server" Height="35px" ImageUrl="~/Icons/userRegistration.png" Width="40px" ToolTip="Click Here To Register" OnClick="ImageButton1_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:ImageButton ID="ImageButton2" runat="server" Height="35px" ImageUrl="~/Icons/cancel.png" Width="40px" ToolTip="Click Here to Cancel" OnClick="ImageButton2_Click" />
+                 </td></tr>
+            
+       </table>
+              </center>
+
+  </div>
+</asp:Content>
+
+UserRegistration.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Data;
+using System.Configuration;
+using System.Net.Mail;
+using System.Net.Security;
+using System.Net;
+
+public partial class UserRegistration : System.Web.UI.Page
+{
+    SqlConnection scon;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+        scon = new SqlConnection(connStr);
+    }
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        String un = TextBox1.Text;
+        String pass = TextBox2.Text;
+        String name = TextBox3.Text;
+        String ut = DropDownList1.SelectedItem.ToString();
+        String rt = String.Empty;
+        if (ut.Equals("Admin"))
+        {
+            rt = "NA";
+        }
+        else
+        {
+             rt = DropDownList2.SelectedItem.ToString();
+        }
+        String mob = TextBox6.Text;
+        String email = TextBox7.Text;
+        String add = TextBox8.Text;
+        String sq = TextBox9.Text;
+        String ans = TextBox10.Text;
+        String doj = TextBox11.Text;
+        String dob = TextBox12.Text;
+        String gender =String.Empty;
+        if (RadioButton1.Checked)
+        {
+            gender = RadioButton1.Text;
+        }
+        else
+        {
+          gender =  RadioButton2.Text;
+        }
+        scon.Open();
+        SqlCommand sc = new SqlCommand("UserRegistrationProc", scon);
+        sc.CommandType = CommandType.StoredProcedure;
+        sc.Parameters.AddWithValue("@un", un);
+        
+ sc.Parameters.AddWithValue("@pass",pass);
+ sc.Parameters.AddWithValue("@name",name);
+ sc.Parameters.AddWithValue("@ut",ut);
+ sc.Parameters.AddWithValue("@rt",rt);
+ sc.Parameters.AddWithValue("@mn",mob);
+ sc.Parameters.AddWithValue("@eid",email);
+ sc.Parameters.AddWithValue("@add",add);
+ sc.Parameters.AddWithValue("@sq",sq);
+ sc.Parameters.AddWithValue("@ans",ans);
+ sc.Parameters.AddWithValue("@doj",doj);
+ sc.Parameters.AddWithValue("@dob",dob);
+ sc.Parameters.AddWithValue("@gen", gender);
+ sc.ExecuteNonQuery();
+ scon.Close();
+ String fromaddress = "prashantkhannalko@gmail.com";
+ String frompassword = "kirankhanna";
+ String toaddress = email;
+ String subject = "User Registration Mail";
+ String body = "Congratulation Your Registration Process completed successfully<br>Your username is" + un + " And Password is" + pass;
+                var smtp = new System.Net.Mail.SmtpClient();
+                    {
+                        smtp.Host = "smtp.gmail.com";
+                        smtp.Port = 587;
+                        smtp.EnableSsl = true;
+                        smtp.DeliveryMethod = System.Net.Mail.SmtpDeliveryMethod.Network;
+                        smtp.Credentials = new NetworkCredential(fromaddress, frompassword);
+                        smtp.Timeout = 20000;
+                    }
+                    smtp.Send(fromaddress, toaddress, subject, body);
+    }
+    protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+    {
+
+    }
+    protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+        if (DropDownList1.SelectedItem.ToString().Equals("Admin"))
+        {
+            DropDownList2.Enabled = false;
+        }
+        else
+        {
+            DropDownList2.Enabled = true;
+        }
+    }
+}
+
+
+ Reporter:
+This module contains different utilities:
+Input: This module contains following details about different reporters and the news posted by them.
+Output: The output of this module is stored in the reporter database.
+Functionality: This module allows the admin to get the information about the different reporters .
+
+Source code
+
+ReporterMasterPage.aspx
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ReporterMasterPage.master.cs" Inherits="ReporterMasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>The Web News</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="ie.css" /><![endif]-->
+    <style type="text/css">
+        .auto-style1 {
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+<!-- BEGIN wrapper -->
+<div id="wrapper">
+  <!-- BEGIN header -->
+  <div id="header">
+    <ul>
+      <li class="f"><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="page.html">Demo Page</a></li>
+      <li><a href="contact.html">Contact Page</a></li>
+    </ul>
+    <p class="links">Subscribe: <a href="http://all-free-download.com/free-website-templates/">Posts</a> | <a href="http://all-free-download.com/free-website-templates/">Comments</a> | <a href="http://all-free-download.com/free-website-templates/">Email</a> </p>
+    <div class="break"></div>
+    <div class="logo">
+      <h1><span class="auto-style1">exclusive </span><a href="http://all-free-download.com/free-website-templates/" class="auto-style1">News</a><span class="auto-style1"> channel</span></h1>
+      <p>No 1 News Site</p>
+    </div>
+    <div class="ad468x60"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad468x60.gif" alt="" /></a> </div>
+    <div class="break"></div>
+    <ol>
+     
+      <li><a href="PostNews.aspx">Post News</a></li>
+      <li><a href="UpdateProfileReporter.aspx">Update Profile</a></li>
+      <li><a href="Logout.aspx">LogOut</a></li>
+   
+    </ol>
+    <div class="break"></div>
+  </div>
+  <!-- END header -->
+  <!-- BEGIN content -->
+     
+      <form id="form1" runat="server">
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+    </div>
+    </form>
+     
+    <!-- END content -->
+  <!-- BEGIN sidebar -->
+
+  <div id="sidebar">
+    <!-- begin ads -->
+    <div class="ads"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/ad125x125.jpg" alt="" /></a> </div>
+    <!-- end ads -->
+    <!-- begin search -->
+    <form class="search" action="http://all-free-download.com/free-website-templates/">
+      <input type="text" name="s" id="s" />
+      <button type="submit">Search</button>
+    </form>
+    <!-- end search -->
+    <div class="wrapper">
+      <!-- begin popular posts -->
+      <h2>Popular Posts</h2>
+      <ul>
+        <li><a href="http://all-free-download.com/free-website-templates/">Make Money Online Creating Websites</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Top 100 Internet Marketing Tips</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Tutorial: How to add Videos in your Post</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Sample Post Unordered List</a></li>
+        <li><a href="http://all-free-download.com/free-website-templates/">Sample Post Blockquote</a></li>
+      </ul>
+      <!-- end popular posts -->
+      <!-- begin flickr photos -->
+      <h2>Flickr Photos</h2>
+      <div class="flickr"> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb3.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb4.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb5.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb6.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb7.jpg" alt="" /></a> <a href="http://all-free-download.com/free-website-templates/"><img src="images/_thumb8.jpg" alt="" /></a> </div>
+      <!-- end flickr photos -->
+      <!-- begin featured video -->
+      <h2>Featured Video</h2>
+      <div class="video"> <img src="images/_video.jpg" alt="" /> </div>
+      <!-- end featured video -->
+      <!-- begin tags -->
+      <h2>Tags</h2>
+      <div class="tags"> </div>
+      <!-- end tags -->
+      <!-- BEGIN left -->
+      <div class="l sbar">
+        <!-- begin categories -->
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Entertainment</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Fashion</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Internet</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Marketing</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Lifestyle</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Make Money</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Online</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Parenting</a></li>
+        </ul>
+        <!-- end categories -->
+        <!-- begin pages -->
+        <h2>Pages</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Home</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">About</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Archives</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Links</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Contact</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Sitemap</a></li>
+        </ul>
+        <!-- end pages -->
+      </div>
+      <!-- END left -->
+      <!-- BEGIN right -->
+      <div class="r sbar">
+        <!-- begin archives -->
+        <h2>Archives</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">August 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">July 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">June 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">May 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">April 2008</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">March 2008</a></li>
+        </ul>
+        <!-- end archives -->
+        <!-- begin blogroll -->
+        <h2>Blogroll</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Carlos</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Digital Point Forum</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Eric's Photo Gallery</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Fashion Trends</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Google Scoreboard</a></li>
+          <li><a href="http://all-free-download.com/free-website-templates/">Marketing Forum</a></li>
+        </ul>
+        <!-- end blogroll -->
+        <!-- begin meta -->
+        <h2>Meta</h2>
+        <ul>
+          <li><a href="http://all-free-download.com/free-website-templates/">Login</a></li>
+        </ul>
+        <!-- end meta -->
+      </div>
+      <!-- END right -->
+    </div>
+  </div>
+  <!-- END sidebar -->
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>Copyright &copy; 2009 - <a href="http://all-free-download.com/free-website-templates/">Website Name</a> &middot; All Rights Reserved</p>
+    <p>Template by: <a href="http://www.wpthemedesigner.com/">WordPress Designer</a> | Get More <a href="http://all-free-download.com/free-website-templates/">Free CSS Templates</a></p>
+  </div>
+  <!-- END footer -->
+</div>
+<!-- END wrapper -->
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
+</html>
+
+ReporterMasterPage.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class ReporterMasterPage : System.Web.UI.MasterPage
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+}
+
+
+ Feedback:
+This module contains :
+Input: The feedback of different people about the functionality of the website.
+Output: This module helps the admin to collect data on how the website is working. 
+Functionality: It stores the database.
+
+Source code
+
+Login.aspx
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Login.aspx.cs" Inherits="Login" %>
+
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <div id="content">
+    <!-- begin post -->
+    <div class="single">
+      <h2>
+          <asp:Label ID="Label1" runat="server" Text="Login" ForeColor="#FF3300"></asp:Label></h2>
+    </div>
+        
+         <asp:RoundedCornersExtender ID="RoundedCornersExtender1" Corners="All" BorderColor="#ff6600" TargetControlID="TextBox1" runat="server"></asp:RoundedCornersExtender>
+         <asp:DropShadowExtender ID="DropShadowExtender1" TargetControlID="TextBox1" runat="server"></asp:DropShadowExtender>
+               <asp:RoundedCornersExtender ID="RoundedCornersExtender2" Corners="All" BorderColor="#ff6600" TargetControlID="TextBox2" runat="server"></asp:RoundedCornersExtender>
+         <asp:DropShadowExtender ID="DropShadowExtender2" TargetControlID="TextBox2" runat="server"></asp:DropShadowExtender>
+          <center>
+       <table width="50%">
+           <tr><td>Enter The Username :</td><td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td></tr>
+           <tr><td colspan="2"><br /></td></tr>
+           <tr><td>Enter The Password  :</td><td><asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox></td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+          
+             <tr><td></td><td align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:ImageButton ID="ImageButton1" runat="server" Height="35px" ImageUrl="~/Icons/login (1).png" Width="40px" ToolTip="Click Here To Login" OnClick="ImageButton1_Click" />&nbsp;&nbsp;&nbsp;&nbsp;
+                 <asp:ImageButton ID="ImageButton2" runat="server" Height="35px" ImageUrl="~/Icons/cancel.png" Width="40px" ToolTip="Click Here to Cancel" OnClick="ImageButton2_Click" />
+                 </td></tr>
+            <tr><td colspan="2" align="left">
+             <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/ForgetPassword.aspx" ForeColor="Blue">Forget Password Click Here...</asp:HyperLink>
+              </td></tr>
+       </table>
+              </center>
+
+  </div>
+</asp:Content>
+Login.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+
+public partial class Login : System.Web.UI.Page
+{
+    SqlConnection scon;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+        scon = new SqlConnection(connStr);
+    }
+    protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
+    {
+        scon.Open();
+        SqlCommand sc = new SqlCommand("CheckLoginProc", scon);
+        sc.CommandType = CommandType.StoredProcedure;
+        sc.Parameters.AddWithValue("@un", TextBox1.Text);
+        sc.Parameters.AddWithValue("@pass", TextBox2.Text);
+        SqlDataReader sdr = sc.ExecuteReader();
+        if (sdr.HasRows)
+        {
+            Session["un"] = TextBox1.Text;
+            sdr.Read();
+            String ut = sdr["Usertype"].ToString();
+            if (ut.Equals("Admin"))
+            {
+                Response.Redirect("AdminIndex.aspx");
+            }
+
+
+
+            else
+            {
+                String rt = sdr["Reportertype"].ToString();
+                Session["rt"] = rt;
+                Response.Redirect("ReporterIndex.aspx");
+
+            }
+
+        }
+        else
+        {
+
+        }
+    }
+    protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
+    {
+        TextBox1.Text = "";
+        TextBox2.Text = "";
+        TextBox1.Focus();
+    }
+}
+
+        
+ Advertisement:
+This module contains different utilities as
+Input: This module contains the advertisements given by different customers.
+Output: This module sends the information about customer to admin.
+Functionality: It helps the customers to easily advertise and publicize their products.
+
+Source code
+
+ PostAdd.aspx
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.master" AutoEventWireup="true" CodeFile="PostAdd.aspx.cs" Inherits="PostAdd" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <div id="content">
+    <!-- begin post -->
+    <div class="single">
+      <h2>
+          <asp:Label ID="Label1" runat="server" Text="Post Add" ForeColor="#FF3300"></asp:Label></h2>
+         <table width="60%">
+           
+           <tr><td>Add Image</td><td>
+               <asp:FileUpload ID="FileUpload1" runat="server" />
+               </td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+            
+           
+              <tr><td>
+                  <asp:Button ID="Button1" runat="server" Text="Post Add" OnClick="Button1_Click" /></td><td>  &nbsp;</td></tr>
+            
+       </table>
+        </div>
+        </div>
+</asp:Content>
+
+PostAdd.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+
+public partial class PostAdd : System.Web.UI.Page
+{
+    SqlConnection scon;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+        scon = new SqlConnection(connStr);
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        String filepath = String.Empty;
+        if (FileUpload1.HasFile)
+        {
+            String fn = FileUpload1.FileName.ToString();
+            FileUpload1.SaveAs(Server.MapPath("~/AddImages/") + fn);
+            filepath = "~/AddImages/" + fn;
+        }
+        else
+        {
+            FileUpload1.Focus();
+        }
+        scon.Open();
+
+        SqlCommand sc = new SqlCommand("insert AddTable values('" + filepath + "')", scon);
+        sc.ExecuteNonQuery();
+        scon.Close();
+    }
+}
+
+ UpdateAdd.aspx
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/AdminMasterPage.master" AutoEventWireup="true" CodeFile="UpdateAdd.aspx.cs" Inherits="UpdateAdd" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="content">
+    <!-- begin post -->
+    <div class="single">
+      <h2>
+          <asp:Label ID="Label1" runat="server" Text="Post Add" ForeColor="#FF3300"></asp:Label></h2>
+         <table width="60%">
+          <tr><td>Enter Add Position</td><td><asp:TextBox ID="TextBox1" runat="server"></asp:TextBox></td></tr> 
+           <tr><td>Add Image</td><td>
+               <asp:FileUpload ID="FileUpload1" runat="server" />
+               </td></tr>
+                <tr><td colspan="2">      
+               <br /></td></tr>
+            
+           
+              <tr><td>
+                  <asp:Button ID="Button1" runat="server" Text="Post Add" OnClick="Button1_Click" /></td><td>  &nbsp;</td></tr>
+            
+       </table>
+        </div>
+        </div>
+</asp:Content>
+
+UpdateAdd.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+
+public partial class UpdateAdd : System.Web.UI.Page
+{
+    SqlConnection scon;
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+        scon = new SqlConnection(connStr);
+    }
+    protected void Button1_Click(object sender, EventArgs e)
+    {
+        int pos = Int32.Parse(TextBox1.Text);
+        String filepath = String.Empty;
+        if (FileUpload1.HasFile)
+        {
+            String fn = FileUpload1.FileName.ToString();
+            FileUpload1.SaveAs(Server.MapPath("~/AddImages/") + fn);
+            filepath = "~/AddImages/" + fn;
+}
+        else
+        {
+            FileUpload1.Focus();
+        }
+        scon.Open();
+
+        SqlCommand sc = new SqlCommand("update AddTable set AddImage='" + filepath + "' where AddId=" + pos + "", scon);
+        sc.ExecuteNonQuery();
+        scon.Close();
+        
+    }
+}
+
+
+ Index
+This module contains different utilities as:
+Input: This module contains database of the different modules.
+Output: This module helps to send information to different pages. 
+Functionality: It allows the user to easily interact with the website.
+
+Source code
+
+Index.aspx
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="index.aspx.cs" Inherits="index" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+    <div id="content">
+    <!-- begin post -->
+    <div class="single">
+    <asp:GridView ID="GridView1" PageSize="4" GridLines="None" 
+        runat="server" Style="position:relative; text-align:justify" 
+    AutoGenerateColumns="False"  BackColor="White" 
+       >
+    <Columns>
+    <asp:TemplateField>
+    <ItemTemplate>
+    <table border="0" width="50%"  style="width:auto;">
+    <tr><td style="font-size:large; color:red;"  colspan="3"><%#Eval("NewsTitle")%></td></tr>
+    <tr><td colspan="3">Created On&nbsp;&nbsp; <%#Eval("NewsDate")%>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; written By&nbsp;&nbsp; <%#Eval("NewsReporter")%></td></tr>
+    <tr><td colspan="3">
+    <center>
+        <asp:Image ID="Image1" Width="400" Height="200" ImageUrl='<%#Eval("NewsImage")%>' runat="server" /><br />
+    
+    </center>
+    <%#Eval("NewsContent")%>
+    </td></tr>
+    
+    </table>
+    </ItemTemplate>
+    </asp:TemplateField>
+    </Columns>
+    </asp:GridView>
+         
+        </div>
+        </div>
+</asp:Content>
+
+
+Index.aspx.cs
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Data;
+
+public partial class index : System.Web.UI.Page
+{
+    SqlConnection scon;
+    string allowed1 = "Yes";
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        string connStr = ConfigurationManager.ConnectionStrings["DBConnectionString"].ConnectionString;
+        scon = new SqlConnection(connStr);
+        scon.Open();
+        SqlCommand sc = new SqlCommand("select top 1 * from Crime where Allow ='" + allowed1 + "' order by NewsId desc", scon);
+        SqlDataReader sdr = sc.ExecuteReader();
+        sdr.Read();
+        DataTable dt = new DataTable();
+
+        DataTable table = new DataTable();
+        table.Columns.Add("NewsTitle", typeof(String));
+        table.Columns.Add("NewsImage", typeof(string));
+        table.Columns.Add("NewsContent", typeof(string));
+        table.Columns.Add("NewsReporter", typeof(String));
+        table.Columns.Add("NewsDate", typeof(String));
+        table.Rows.Add(sdr["NewsTitle"].ToString(), sdr["NewsImage"].ToString(), sdr["NewsContent"].ToString(), sdr["NewsReporter"].ToString(), sdr["NewsDate"].ToString());
+       
+        scon.Close();
+        scon.Open();
+        SqlCommand sc1 = new SqlCommand("select top 1 * from Sports where Allow ='" + allowed1 + "' order by NewsId desc", scon);
+        SqlDataReader sdr1 = sc1.ExecuteReader();
+        sdr1.Read();
+        table.Rows.Add(sdr1["NewsTitle"].ToString(), sdr1["NewsImage"].ToString(), sdr1["NewsContent"].ToString(), sdr1["NewsReporter"].ToString(), sdr1["NewsDate"].ToString());
+        GridView1.DataSource = table;
+        GridView1.DataBind();
+
+
+    }
+}
+
+
+ Videos:
+This module contains different utilities as:
+Input: This module contains different type of videos of different videos.
+Output: This module sends the information about a different updates in society.
+Functionality: It allows the user to easily view old news also instead of in televisions.
+
+Source code
+
+Videos.aspx
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MainMasterPage.master" AutoEventWireup="true" CodeFile="Videos.aspx.cs" Inherits="Videos" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <div id="content">
+    <!-- begin post -->
+    <div class="single">
+      <h2>
+          <asp:Label ID="Label1" runat="server" Text="Login" ForeColor="Red"></asp:Label></h2>
+    </div>
+         <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+    <title>SilverlightApplication</title>
+    <style type="text/css">
+    html, body {
+	    height: 100%;
+	    overflow: auto;
+    }
+    body {
+	    padding: 0;
+	    margin: 0;
+    }
+    #silverlightControlHost {
+	    height: 100%;
+	    text-align:center;
+    }
+    </style>
+    <script type="text/javascript" src="Silverlight.js"></script>
+    <script type="text/javascript">
+        function onSilverlightError(sender, args) {
+            var appSource = "";
+            if (sender != null && sender != 0) {
+                appSource = sender.getHost().Source;
+            }
+
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            if (errorType == "ImageError" || errorType == "MediaError") {
+                return;
+            }
+
+            var errMsg = "Unhandled Error in Silverlight Application " + appSource + "\n";
+
+            errMsg += "Code: " + iErrorCode + "    \n";
+            errMsg += "Category: " + errorType + "       \n";
+            errMsg += "Message: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "File: " + args.xamlFile + "     \n";
+                errMsg += "Line: " + args.lineNumber + "     \n";
+                errMsg += "Position: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {
+                if (args.lineNumber != 0) {
+                    errMsg += "Line: " + args.lineNumber + "     \n";
+                    errMsg += "Position: " + args.charPosition + "     \n";
+                }
+                errMsg += "MethodName: " + args.methodName + "     \n";
+            }
+
+            throw new Error(errMsg);
+        }
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server" style="height:100%">
+    <div id="silverlightControlHost">
+        <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="100%">
+		  <param name="source" value="ClientBin/SilverlightApplication.xap"/>
+		  <param name="onError" value="onSilverlightError" />
+		  <param name="background" value="white" />
+		  <param name="minRuntimeVersion" value="5.0.61118.0" />
+		  <param name="autoUpgrade" value="true" />
+		  <a href="http://go.microsoft.com/fwlink/?LinkID=149156&v=5.0.61118.0" style="text-decoration:none">
+ 			  <img src="http://go.microsoft.com/fwlink/?LinkId=161376" alt="Get Microsoft Silverlight" style="border-style:none"/>
+		  </a>
+	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe></div>
+    </form>
+</body>
+</html>
+
+         </div>
+</asp:Content>
+
+Videos.aspx.cs
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class Videos : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+}
+
+
+
